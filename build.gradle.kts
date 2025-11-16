@@ -1,26 +1,12 @@
-// build.gradle.kts (niveau module/app)
-
-plugins {
-    id("com.android.application")
-    kotlin("android")
-}
-
-android {
-    namespace = "com.example.myapp"
-    compileSdk = 34
-
-    defaultConfig {
-        applicationId = "com.example.myapp"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
     }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.5.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
     }
 }
 
@@ -30,13 +16,4 @@ allprojects {
         mavenCentral()
         maven("https://jitpack.io")
     }
-}
-
-dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.google.android.material:material:1.11.0")
-
-    // Dépendance JitPack
-    implementation("com.github.MeivanK20:My-Immo-1:1.0.0")
 }

@@ -38,6 +38,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.webkit:webkit:1.9.0")
+    implementation("com.github.MeivanK20:My-Immo-1:1.0.0")
+    implementation("io.github.jan-supabase:postgrest-kt:2.5.2")
 }
 
 publishing {
