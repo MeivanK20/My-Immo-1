@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.meivank20.my-immo-1"
+    namespace = "com.MeivanK20.My-Immo-1"
     compileSdk = 34
 
     defaultConfig {

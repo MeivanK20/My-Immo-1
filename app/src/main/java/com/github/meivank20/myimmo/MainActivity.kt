@@ -1,4 +1,4 @@
-package com.github.meivank20.myimmo 1
+package com.github.MeivanK20.My-Immo-1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
