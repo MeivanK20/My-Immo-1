@@ -1,35 +1,20 @@
+// build.gradle.kts (root)
+
 plugins {
-    kotlin("android") version "1.9.0" apply false
-    id("com.android.application") version "8.3.0" apply false
+    // Pas de plugin Android dans le root : uniquement dans les modules
+    id("maven-publish")
 }
 
 buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
         maven("https://jitpack.io")
     }
     dependencies {
         classpath("com.android.tools.build:gradle:8.3.0")
-        classpath(kotlin("gradle-plugin", "1.9.0"))
-    }
-}
-
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-        maven("https://jitpack.io")
-    }
-}
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://jitpack.io")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
 }
 
