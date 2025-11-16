@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myimmo"
+    namespace = "com.meivank20.myimmo1"
     compileSdk = 34
 
     defaultConfig {
@@ -37,20 +37,15 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
-
-    // WebView (si tu veux afficher ton site)
     implementation("androidx.webkit:webkit:1.9.0")
 }
 
 publishing {
     publications {
         create<MavenPublication>("release") {
-            // Publie l’artefact AAR du build release
             from(components["release"])
-
-            // 📌 IMPORTANT : Identifiants JitPack
             groupId = "com.github.MeivanK20"
-            artifactId = "My-Immo"
+            artifactId = "My-Immo1"
             version = "1.0.0"
         }
     }

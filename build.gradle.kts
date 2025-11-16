@@ -1,7 +1,6 @@
 // build.gradle.kts (root)
 
 plugins {
-    // Pas de plugin Android dans le root : uniquement dans les modules
     id("maven-publish")
 }
 
