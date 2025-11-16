@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.meivank20.myimmo1"
+    namespace = "com.meivank20.my-immo-1"
     compileSdk = 34
 
     defaultConfig {
@@ -45,7 +45,7 @@ publishing {
         create<MavenPublication>("release") {
             from(components["release"])
             groupId = "com.github.MeivanK20"
-            artifactId = "My-Immo1"
+            artifactId = "My-Immo-1"
             version = "1.0.0"
         }
     }
