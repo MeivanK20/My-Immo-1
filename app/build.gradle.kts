@@ -1,16 +1,20 @@
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    id("maven-publish")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
 }
 
 android {
-    namespace = "com.MeivanK20.My-Immo-1"
+    namespace = "com.example.myimmo"
     compileSdk = 34
 
     defaultConfig {
+        applicationId = "com.example.myimmo"
         minSdk = 24
-        consumerProguardFiles("consumer-rules.pro")
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -34,21 +38,28 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.webkit:webkit:1.9.0")
-    implementation("com.github.MeivanK20:My-Immo-1:1.0.0")
-    implementation("io.github.jan-supabase:postgrest-kt:2.5.2")
-}
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            from(components["release"])
-            groupId = "com.github.MeivanK20"
-            artifactId = "My-Immo-1"
-            version = "1.0.0"
-        }
-    }
+    // ViewModel and LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
+    implementation("androidx.activity:activity-ktx:1.9.2")
+
+    // Supabase
+    val supabaseVersion = "3.2.6"
+    implementation(platform("io.github.jan-tennert.supabase:bom:$supabaseVersion"))
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.github.jan-tennert.supabase:gotrue-kt")
+    implementation("io.github.jan-tennert.supabase:storage-kt")
+    implementation("io.ktor:ktor-client-android:2.3.8")
+
+    // Kotlinx Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
